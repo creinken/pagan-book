@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import Home from './containers/Home';
+import Navbar from './components/Navbar'
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -13,7 +14,10 @@ let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wind
 ReactDOM.render(
   <Provider store={store}>
       <Router>
-          <Route path="/" component={Home} />
+          <>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+          </>
       </Router>
   </Provider>,
   document.getElementById('root')

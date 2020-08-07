@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Home = () =>
+const Groups = () =>
     <div>
 
     </div>;
 
-export default Home
+export default Groups
