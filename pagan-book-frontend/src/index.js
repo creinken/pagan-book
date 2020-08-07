@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
-import Home from './containers/Home';
-import Groups from './containers/Groups';
-import Login from './containers/Login';
+import App from './App'
 
-import Navbar from './components/Navbar'
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -16,14 +12,7 @@ let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wind
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router>
-          <>
-            <Navbar />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/groups" component={Groups} />
-            <Route exact path="/login" component={Login} />
-          </>
-      </Router>
+      <App />
   </Provider>,
   document.getElementById('root')
 );
