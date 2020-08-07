@@ -12,14 +12,14 @@ const Navbar = () =>
             }}
             >Home</NavLink>
             <NavLink
-                to="/Groups"
+                to="/groups"
                 exact
                 activeStyle={{
                     background: 'darkred'
                 }}
             >Groups</NavLink>
             <NavLink
-                to="/Login"
+                to="/login"
                 exact
                 activeStyle={{
                     background: 'darkred'
