@@ -17,7 +17,7 @@ class PostsContainer extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-               {/* this.props.posts.map(postObj => { return <PostCard post={postObj} removePost={this.props.removePost} /> } ) */}
+               { this.props.posts.map(postObj => { return <PostCard post={postObj} removePost={this.props.removePost} /> } ) }
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    return { posts: state.posts }
+    return { posts: state.postsReducer.posts }
 }
 
 const mapDispatchToProps = dispatch => {

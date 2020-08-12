@@ -19,9 +19,15 @@ class Home extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        posts: state.postsReducer.posts
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         fetchPosts: () => dispatch(fetchPosts())
     }
 }
-export default connect(null,mapDispatchToProps)(Home)
+export default connect(mapStateToProps,mapDispatchToProps)(Home)
