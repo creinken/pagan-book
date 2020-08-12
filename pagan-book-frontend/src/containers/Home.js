@@ -6,25 +6,16 @@ import PostsContainer from './PostsContainer'
 class Home extends Component {
 
     componentDidMount() {
-        console.log(this.props);
         this.props.fetchPosts()
     }
 
     render() {
-        console.log(this.props);
         return (
             <div>
                 Home
-                <PostsContainer posts={this.props.posts} />
+                <PostsContainer />
             </div>
         )
-    }
-}
-
-const mapStateToProps = state => {
-    return {
-        posts: state.posts,
-        loading: state.loading
     }
 }
 
@@ -33,4 +24,4 @@ const mapDispatchToProps = dispatch => {
         fetchPosts: () => dispatch(fetchPosts())
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Home)
+export default connect(null,mapDispatchToProps)(Home)

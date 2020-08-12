@@ -6,6 +6,7 @@ import { removePost } from '../actions/posts';
 class PostsContainer extends Component {
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <hr />
@@ -31,7 +32,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    removeQuote: (id) => {
+    removePost: (id) => {
       dispatch(removePost(id))
     }
   };
