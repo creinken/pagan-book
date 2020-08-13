@@ -16,9 +16,7 @@ class PostsContainer extends Component {
         <hr />
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
                { this.props.posts.map(postObj => { return <PostCard post={postObj} removePost={this.props.removePost} /> } ) }
-            </div>
           </div>
         </div>
       </div>

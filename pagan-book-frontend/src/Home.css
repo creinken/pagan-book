@@ -1,0 +1,10 @@
+.post-card {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 15px;
+}
+
+.post-card h3 {
+    text-align: center;
+}

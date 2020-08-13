@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
-import PostsContainer from './PostsContainer'
+import PostsContainer from './PostsContainer';
+import '../Home.css';
 
 class Home extends Component {
 

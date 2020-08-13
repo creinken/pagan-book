@@ -4,8 +4,8 @@ export default class PostCard extends Component {
 
   render() {
     return (
-      <div>
-        <h3>{this.props.post.title}</h3>
+      <div className="post-card col-md-12 col-lg-6">
+        <h3>{this.props.post.title}</h3><hr/>
         <h4>{this.props.post.author}</h4>
         <p>{this.props.post.content}</p>
       </div>
