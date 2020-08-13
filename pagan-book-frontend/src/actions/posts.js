@@ -6,7 +6,6 @@ export const removePost = id => {
 
 export const fetchPosts = () => {
     return (dispatch) => {
-        console.log(`${serverURL} + '/posts'`);
         dispatch({ type: 'LOADING_POSTS'})
         fetch(`${serverURL}/posts`)
         .then(res => { return res.json()})

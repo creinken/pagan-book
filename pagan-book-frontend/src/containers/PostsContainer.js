@@ -6,7 +6,6 @@ import { removePost } from '../actions/posts';
 class PostsContainer extends Component {
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <hr />

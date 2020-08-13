@@ -64,13 +64,13 @@
                                                     className="form-control"
                                                     name="content"
                                                     onChange={this.handleOnChange}
-                                                    value={this.state.author}
+                                                    value={this.state.content}
                                                 />
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <div className="col-md-6 col-md-offset-4">
-                                                <button type="submit" className="btn btn-default">Add</button>
+                                                <button type="submit" className="btn btn-default">Post</button>
                                             </div>
                                         </div>
                                     </form>

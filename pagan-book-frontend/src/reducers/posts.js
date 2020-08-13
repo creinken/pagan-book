@@ -14,6 +14,13 @@ const postsReducer = (state = { posts: [], loading: false }, action) => {
                 loading: false
             }
 
+        case 'REMOVE_POST':
+            return {
+                ...state,
+                posts: state.posts.filter(post => post.id !== action.id),
+                loading: false
+            }
+
         default:
             return state;
     }
