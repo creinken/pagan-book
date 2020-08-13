@@ -14,6 +14,13 @@ const postsReducer = (state = { posts: [], loading: false }, action) => {
                 loading: false
             }
 
+        case 'ADD_NEW_POST':
+            return {
+                ...state,
+                posts: [...state.posts, action.payload],
+                loading: false
+            }
+
         case 'REMOVE_POST':
             return {
                 ...state,
