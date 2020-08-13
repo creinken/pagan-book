@@ -27,3 +27,17 @@ export const fetchPosts = () => {
         })
     }
 }
+
+export const addPost = payload => {
+    return (dispatch) => {
+        dispatch({ type: 'LOADING_POSTS'})
+        fetch(`${serverURL}/posts`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({ post: payload})
+        })
+    }
+}

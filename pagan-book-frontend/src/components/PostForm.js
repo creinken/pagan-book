@@ -16,7 +16,7 @@
 
         handleOnSubmit = event => {
             event.preventDefault();
-
+            this.props.addPost(this.state)
             this.setState({
                 title: '',
                 author: '',
