@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
 import PostsContainer from './PostsContainer';
+import PostForm from '../components/PostForm';
 import '../Home.css';
 
 class Home extends Component {
@@ -14,6 +15,7 @@ class Home extends Component {
         return (
             <div>
                 Home
+                <PostForm />
                 <PostsContainer />
             </div>
         )
