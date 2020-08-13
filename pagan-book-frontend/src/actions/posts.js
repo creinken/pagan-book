@@ -1,7 +1,20 @@
 const serverURL = 'http://localhost:5000';
 
 export const removePost = id => {
-    return { type: 'REMOVE_POST', id}
+    return (dispatch) => {
+        fetch(`${serverURL}/posts/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(json => console.log(json.message))
+        .then(post =>
+            dispatch({ type: 'REMOVE_POST', id})
+        );
+    };
 }
 
 export const fetchPosts = () => {
