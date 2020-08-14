@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchGroups, addGroup } from '../actions/groups';
+import GroupForm from '../components/GroupForm';
+import GroupsContainer from './GroupsContainer';
 
 import '../Groups.css';
 
@@ -13,7 +15,8 @@ class Groups extends Component {
     render() {
         return (
             <div>
-                Groups
+                <GroupForm addGroup={this.props.addGroup} />
+                <GroupsContainer />
             </div>
         )
     }

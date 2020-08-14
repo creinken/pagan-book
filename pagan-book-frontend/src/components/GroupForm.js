@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 
-export default class PostForm extends Component {
+export default class GroupForm extends Component {
 
     state = {
-        title: '',
-        author: '',
-        content: '',
+        name: '',
+        description: '',
     }
 
     handleOnChange = event => {
@@ -16,11 +15,10 @@ export default class PostForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.addPost(this.state)
+        this.props.addGroup(this.state)
         this.setState({
-            title: '',
-            author: '',
-            content: '',
+            name: '',
+            description: '',
         })
     }
 
@@ -34,43 +32,31 @@ export default class PostForm extends Component {
                                 <form className="form-horizontal"
                                     onSubmit={this.handleOnSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="title" className="col-md-4 control-label">Title</label>
+                                        <label htmlFor="name" className="col-md-4 control-label">Name</label>
                                         <div className="col-md-5">
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                name="title"
+                                                name="name"
                                                 onChange={this.handleOnChange}
-                                                value={this.state.title}
+                                                value={this.state.name}
                                             />
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="author" className="col-md-4 control-label">Author</label>
-                                        <div className="col-md-5">
-                                            <input
-                                                className="form-control"
-                                                type="text"
-                                                name="author"
-                                                onChange={this.handleOnChange}
-                                                value={this.state.author}
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="content" className="col-md-4 control-label">Content</label>
+                                        <label htmlFor="description" className="col-md-4 control-label">Group Description</label>
                                         <div className="col-md-5">
                                             <textarea
                                                 className="form-control"
-                                                name="content"
+                                                name="description"
                                                 onChange={this.handleOnChange}
-                                                value={this.state.content}
+                                                value={this.state.description}
                                             />
                                         </div>
                                     </div>
                                     <div className="form-group">
                                         <div className="col-md-6 col-md-offset-4">
-                                            <button type="submit" className="btn btn-default">Post</button>
+                                            <button type="submit" className="btn btn-default">Create Group</button>
                                         </div>
                                     </div>
                                 </form>
