@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default class GroupCard extends Component {
+const GroupCard = (props) => {
 
-  render() {
     return (
       <div className="post-card col-md-12 col-lg-6">
-        <h3>{this.props.group.name}</h3><hr/>
-        <button onClick={() => {this.props.removeGroup(this.props.group.id)}} >Delete</button>
+        <h3><Link key={props.group.id} to={`/groups/${props.group.id}`} >{props.group.name}</Link></h3><hr/>
+        <button onClick={() => {props.removeGroup(props.group.id)}} >Delete</button>
       </div>
-    )
-  }
-}
+  );
+};
+
+export default GroupCard;

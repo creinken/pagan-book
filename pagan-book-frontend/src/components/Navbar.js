@@ -12,7 +12,6 @@ const Navbar = () =>
             >Home</NavLink>
             <NavLink
                 to="/groups"
-                exact
                 activeStyle={{
                     background: 'darkred'
                 }}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchGroups, addGroup } from '../actions/groups';
+import { fetchGroups, addGroup, removeGroup } from '../actions/groups';
 import GroupForm from '../components/GroupForm';
 import GroupsContainer from './GroupsContainer';
 
@@ -16,7 +16,7 @@ class Groups extends Component {
         return (
             <div>
                 <GroupForm addGroup={this.props.addGroup} />
-                <GroupsContainer />
+                <GroupsContainer match={this.props.match} groups={this.props.groups} removeGroup={this.props.removeGroup}/>
             </div>
         )
     }
@@ -31,7 +31,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchGroups: () => dispatch(fetchGroups()),
-        addGroup: payload => dispatch(addGroup(payload))
+        addGroup: payload => dispatch(addGroup(payload)),
+        removeGroup: id => dispatch(removeGroup(id))
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Groups)
