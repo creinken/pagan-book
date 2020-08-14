@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
     def index
-        posts = Post.all
+
+        if params[:group_id]
+            posts = Group.find(params[:group_id]).posts
+        else
+            posts = Post.all
+        end
 
         render json: posts
     end
