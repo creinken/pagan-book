@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchGroups, addGroups } from '../actions/groups';
+import { fetchGroups, addGroup } from '../actions/groups';
 
 import '../Groups.css';
 
