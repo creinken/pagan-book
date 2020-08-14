@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_184126) do
+ActiveRecord::Schema.define(version: 2020_08_13_234910) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.integer "location_id"
+    t.integer "group_id"
     t.integer "user_id"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
