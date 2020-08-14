@@ -6,6 +6,10 @@ import '../Groups.css';
 
 class Groups extends Component {
 
+    componentDidMount() {
+        this.props.fetchGroups()
+    }
+
     render() {
         return (
             <div>

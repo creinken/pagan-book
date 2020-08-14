@@ -1,4 +1,4 @@
-const groupsReducer = (state = { posts: [], loading: false }, action) => {
+const groupsReducer = (state = { groups: [], loading: false }, action) => {
     switch (action.type) {
         case 'LOADING_GROUPS':
             return {
