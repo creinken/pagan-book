@@ -17,7 +17,7 @@ class App extends Component {
             <Navbar />
             <Route exact path="/" component={Home} />
             <Route exact path="/groups" render={routerProps => <Groups {...routerProps} /> } />
-            <Route path={`/groups/:groupId`} render={routerProps => <GroupShow {...routerProps} groups={this.props.groups}/>} />
+            <Route path={`/groups/:groupId`} render={routerProps => <GroupShow {...routerProps} />} />
             <Route exact path="/login" component={Login} />
           </>
       </Router>

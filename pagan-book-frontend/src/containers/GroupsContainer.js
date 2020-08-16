@@ -11,7 +11,7 @@ const GroupsContainer = (props) => (
         <hr />
         <div className="container">
             <div className="row">
-                { props.groups.map(groupObj => { return <GroupCard group={groupObj} removeGroup={props.removeGroup} /> } ) }
+                { props.groups.map(groupObj => { return <GroupCard group={groupObj} /> } ) }
             </div>
         </div>
     </div>

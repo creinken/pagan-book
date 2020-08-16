@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const GroupCard = ({group, removeGroup}) => {
+const GroupCard = (props) => {
 
     return (
       <div className="post-card col-md-12 col-lg-6">
-        <h3><Link key={group.id} to={`/groups/${group.id}`} >{group.name}</Link></h3><hr/>
-        <button onClick={() => {removeGroup(group.id)}} >Delete</button>
+        <h3><Link key={props.group.id} to={`/groups/${props.group.id}`} >{props.group.name}</Link></h3>
       </div>
   );
 };

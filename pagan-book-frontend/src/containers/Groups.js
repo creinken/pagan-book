@@ -9,7 +9,7 @@ import '../Groups.css';
 class Groups extends Component {
 
     componentDidMount() {
-        this.props.fetchGroups()
+        this.props.fetchGroups(this.props.match.url)
     }
 
     render() {
@@ -30,7 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchGroups: () => dispatch(fetchGroups()),
+        fetchGroups: url => dispatch(fetchGroups(url)),
         addGroup: payload => dispatch(addGroup(payload)),
         removeGroup: id => dispatch(removeGroup(id))
     }

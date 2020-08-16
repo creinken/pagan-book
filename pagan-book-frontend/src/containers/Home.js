@@ -12,7 +12,7 @@ class Home extends Component {
             <div>
                 Home
                 <PostForm addPost={this.props.addPost} />
-                <PostsContainer url='groups/1/posts'/>
+                <PostsContainer url='/groups/1/posts'/>
             </div>
         )
     }

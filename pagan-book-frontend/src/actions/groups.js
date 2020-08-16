@@ -17,10 +17,10 @@ export const removeGroup = id => {
     };
 }
 
-export const fetchGroups = () => {
+export const fetchGroups = url => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_GROUPS'})
-        fetch(`${serverURL}/groups`)
+        fetch(`${serverURL}${url}`)
         .then(res => { return res.json()})
         .then(json => {
             dispatch({ type: 'ADD_GROUPS', groups: json })
