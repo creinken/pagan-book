@@ -16,7 +16,7 @@ class Groups extends Component {
         return (
             <div>
                 <GroupForm addGroup={this.props.addGroup} />
-                <GroupsContainer match={this.props.match} groups={this.props.groups} removeGroup={this.props.removeGroup}/>
+                <GroupsContainer groups={this.props.groups.filter(group => group.id !== 1)} removeGroup={this.props.removeGroup}/>
             </div>
         )
     }
