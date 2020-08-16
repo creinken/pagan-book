@@ -7,7 +7,7 @@ const GroupShow = ({match, groups}) => {
 
     return (
         <>
-            <Route exact path={`/groups/:groupId`} render={ () => {
+            <Route path={`/groups/:groupId`} render={ () => {
                     return (
                         <div className='container'>
                             <h3>{group.name}</h3>
@@ -18,7 +18,7 @@ const GroupShow = ({match, groups}) => {
             />
             <Route
                 exact
-                path={`/groups/:groupId/index`}
+                path={`/groups/:groupId/posts`}
                 render={ routerProps =>
                     <PostsContainer {...routerProps} /> }
             />

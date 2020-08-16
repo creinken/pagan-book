@@ -1,6 +1,5 @@
 import React from 'react';
 import GroupCard from '../components/GroupCard';
-import { Route } from 'react-router-dom';
 
 const GroupsContainer = (props) => (
 

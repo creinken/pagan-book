@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
     def index
-
         if params[:group_id]
             posts = Group.find(params[:group_id]).posts
         else

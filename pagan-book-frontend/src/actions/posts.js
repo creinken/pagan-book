@@ -17,12 +17,13 @@ export const removePost = id => {
     };
 }
 
-export const fetchPosts = () => {
+export const fetchPosts = url => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_POSTS'})
-        fetch(`${serverURL}/posts`)
+        fetch(`${serverURL}${url}`)
         .then(res => { return res.json()})
         .then(json => {
+            console.log(json);
             dispatch({ type: 'ADD_POSTS', posts: json })
         })
     }
