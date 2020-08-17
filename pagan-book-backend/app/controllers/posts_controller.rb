@@ -11,7 +11,13 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.new(post_params)
+        if params[:group_id]
+            group = Group.find(params[:group_id])
+        else
+            group = Group.find(1)
+        end
+
+        post = group.posts.build(post_params)
 
         if post.save
             render json: { post: post, message: 'posted successfully'}
@@ -29,6 +35,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:title, :user_id, :location_id, :content)
+        params.require(:post).permit(:title, :user_id, :content)
     end
 end

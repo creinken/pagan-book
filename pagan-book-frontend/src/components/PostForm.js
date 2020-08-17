@@ -16,7 +16,11 @@ export default class PostForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.addPost(this.state)
+        let postData = {
+            title: this.state.title,
+            user_id: this.state.author,
+            content: this.state.content}
+        this.props.addPost(postData)
         this.setState({
             title: '',
             author: '',
