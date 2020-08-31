@@ -1,8 +1,16 @@
 import { combineReducers } from 'redux';
 import postsReducer from './posts';
 import groupsReducer from './groups';
+import { authentication } from './authentication.reducer';
+import { users } from './users.reducer';
+import { alert } from './alert.reducer';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   postsReducer,
-  groupsReducer
+  groupsReducer,
+  authentication,
+  users,
+  alert
 });
+
+export default rootReducer;
