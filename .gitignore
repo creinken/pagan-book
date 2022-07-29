@@ -4,28 +4,55 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+
+###### Frontend ignores
+# dependencies
+/pagan-book-frontend/node_modules
+/pagan-book-frontend/.pnp
+/pagan-book-frontend/.pnp.js
+
+# testing
+/pagan-book-frontend/coverage
+
+# production
+/pagan-book-frontend/build
+
+# misc
+/pagan-book-frontend/.DS_Store
+/pagan-book-frontend/.env.local
+/pagan-book-frontend/.env.development.local
+/pagan-book-frontend/.env.test.local
+/pagan-book-frontend/.env.production.local
+
+/pagan-book-frontend/npm-debug.log*
+/pagan-book-frontend/yarn-debug.log*
+/pagan-book-frontend/yarn-error.log*
+
+
+###### Backend ignores
+
 # Ignore bundler config.
-/backend/.bundle
+/pagan-book-backend/.bundle
 
 # Ignore all logfiles and tempfiles.
-/backend/log/*
-/backend/tmp/*
-!/log/.keep
-!/tmp/.keep
+/pagan-book-backend/log/*
+/pagan-book-backend/tmp/*
+!/pagan-book-backend/log/.keep
+!/pagan-book-backend/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
-/backend/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+/pagan-book-backend/tmp/pids/*
+!/pagan-book-backend/tmp/pids/
+!/pagan-book-backend/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/backend/storage/*
-!/storage/.keep
-/backend/tmp/storage/*
-!/tmp/storage/
-!/tmp/storage/.keep
+/pagan-book-backend/storage/*
+!/pagan-book-backend/storage/.keep
+/pagan-book-backend/tmp/storage/*
+!/pagan-book-backend/tmp/storage/
+!/pagan-book-backend/tmp/storage/.keep
 
-/backend/public/assets
+/pagan-book-backend/public/assets
 
 # Ignore master key for decrypting credentials and more.
-/backend/config/master.key
+/pagan-book-backend/config/master.key
