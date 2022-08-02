@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+  get 'posts/create'
+  get 'posts/destroy'
   get 'groups/index'
   get 'groups/show'
   get 'groups/create'
