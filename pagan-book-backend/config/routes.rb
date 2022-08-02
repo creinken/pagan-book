@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/create'
-  get 'posts/destroy'
-  get 'groups/index'
-  get 'groups/show'
-  get 'groups/create'
-  get 'groups/destroy'
+  resources :groups do
+      resources :posts
+  end
+  resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
