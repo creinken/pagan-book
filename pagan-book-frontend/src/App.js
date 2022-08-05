@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Navbar from './components/Navbar'
+import Home from './containers/Home';
+import Groups from './containers/Groups';
+import GroupShow from './containers/GroupShow';
+import Login from './containers/Login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  render() {
+    return (
+      <Router>
+          <>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/groups" render={routerProps => <Groups {...routerProps} /> } />
+            <Route path={`/groups/:groupId`} render={routerProps => <GroupShow {...routerProps} />} />
+            <Route exact path="/login" component={Login} />
+          </>
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        groups: state.groupsReducer.groups
+    }
+}
+
+export default connect(mapStateToProps)(App)
